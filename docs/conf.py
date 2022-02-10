@@ -20,19 +20,19 @@ import sys
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 
-import test_uibcdf_library
+import project_name
 
 # -- Project information -----------------------------------------------------
 
-project = 'Test-UIBCDF-Library'
+project = 'Project Name'
 copyright = ('2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors.'
         'Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5')
 author = 'Liliana M. Moreno Vargas & Diego Prada Gracia'
 
 # The short X.Y version
-version = test_uibcdf_library.__version__.split('+')[0]
+version = project_name.__version__.split('+')[0]
 # The full version, including alpha/beta/rc tags
-release = test_uibcdf_library.__version__
+release = project_name.__version__
 
 
 # -- General configuration ---------------------------------------------------
@@ -55,16 +55,27 @@ extensions = [
     'sphinx.ext.napoleon',
     'sphinx.ext.githubpages',
     'sphinxcontrib.bibtex',
-    'nbsphinx',
-    'recommonmark',
-    'sphinx_markdown_tables',
-    'sphinx.ext.extlinks'
+    'sphinx.ext.extlinks',
+    'myst_nb'
 ]
 
 autosummary_generate = True
+
+# Napoleon settings
+napoleon_numpy_docstring = True
 napoleon_google_docstring = False
-napoleon_use_param = False
-napoleon_use_ivar = True
+napoleon_include_init_with_doc = False
+napoleon_include_private_with_doc = False
+napoleon_include_special_with_doc = True
+napoleon_use_admonition_for_examples = False
+napoleon_use_admonition_for_notes = True
+napoleon_use_admonition_for_references = False
+napoleon_use_ivar = False
+napoleon_use_param = True
+napoleon_use_rtype = True
+napoleon_preprocess_types = False
+napoleon_type_aliases = None
+napoleon_attr_annotations = True
 
 # sphinxcontrib-bibtex
 bibtex_bibfiles = ['bibliography.bib'] # list of *.bib files
@@ -80,10 +91,7 @@ templates_path = ['_templates']
 source_parsers={
 }
 
-source_suffix = {
-    '.rst': 'restructuredtext',
-    '.md': 'markdown'
-}
+source_suffix = ['.rst', '.md']
 
 # The master toctree document.
 master_doc = 'index'
@@ -109,28 +117,27 @@ pygments_style = 'default'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
+
 html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#
-# html_theme_options = {}
-#html_theme_options = {
-#    'canonical_url': '',
-#    'analytics_id': '',
-#    'logo_only': False,
-#    'display_version': True,
-#    'prev_next_buttons_location': 'bottom',
-#    'style_external_links': False,
-#    # Toc options
-#    'collapse_navigation': False,
-#    'sticky_navigation': True,
-#    'navigation_depth': 4,
-#    'includehidden': True,
-#    'titles_only': False
-#}
+
+html_theme_options = {
+    'canonical_url': '',
+    'analytics_id': '',
+    'logo_only': False,
+    'display_version': True,
+    'prev_next_buttons_location': 'bottom',
+    'style_external_links': False,
+    # Toc options
+    'collapse_navigation': False,
+    'sticky_navigation': True,
+    'navigation_depth': 3,
+    'includehidden': True,
+    'titles_only': False
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
@@ -156,11 +163,14 @@ html_css_files = [
 #
 # html_sidebars = {}
 
+# To remove 'View page source' adding the 'Forkme on GitHub' ribbon.
+
+html_show_sourcelink = False
 
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'test_uibcdf_librarydoc'
+htmlhelp_basename = 'project_name_doc'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -187,8 +197,6 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-        (master_doc, 'test_uibcdf_library.tex', 'Test-UIBCDF-Library Documentation',
-            'test_uibcdf_library', 'manual'),
 ]
 
 
@@ -197,9 +205,6 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-        (master_doc, 'test_uibcdf_library', 'Test-UIBCDF-Library Documentation',
-            [author], 1)
-
 ]
 
 
@@ -209,10 +214,6 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'test_uibcdf_library', 'Test-UIBCDF-Library Documentation',
-        author, 'test_uibcdf_library', 'This must be a short description of the project',
-        'Miscellaneous'),
-
 ]
 
 

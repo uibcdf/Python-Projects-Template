@@ -1,5 +1,5 @@
 """
-ProjectName
+Project Name
 A short description of the project.
 """
 import sys
@@ -20,15 +20,15 @@ except:
 
 
 setup(
-    name='test_uibcdf_library',
+    name='project_name',
     author='UIBCDF Lab',
     author_email='uibcdf@gmail.com',
     version=versioneer.get_version(),
     cmdclass=versioneer.get_cmdclass(),
-    package_dir={'test_uibcdf_library': 'test_uibcdf_library'},
+    package_dir={'project_name': 'project_name'},
     packages=find_packages(),
     include_package_data=True,
-    package_data={'test_uibcdf_library': ['data']},
+    package_data={'project_name': ['data']},
     scripts=[],
     setup_requires=[] + pytest_runner,
     platforms=['Linux',
@@ -38,7 +38,7 @@ setup(
     ],
     python_requires=">=3.7",
     url='http://uibcdf.org',
-    download_url ='https://github.com/uibcdf/Test-UIBCDF-Library',
+    download_url ='https://github.com/uibcdf/Project-Name',
     license='MIT',
     description=short_description[0],
     long_description=long_description,

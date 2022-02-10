@@ -1,31 +1,44 @@
-.. test_uibcdf_library documentation master file
+.. project_name documentation master file
 
-Test-UIBCDF-Library
-===================
+Project Name
+============
 
-XXXXX
-
-.. _libraries-supported:
+This is the UIBCDF Python project template with developing guidelines.
 
 .. toctree::
-   :name: library_guide
-   :caption: Library Guide
-   :maxdepth: 1
+   :name: about
+   :caption: About
+   :maxdepth: 2
 
-   contents/Whats_this.md
-   contents/academia.md
-   contents/best_practices.md
-   contents/data.md
-   contents/devtools.md
-   contents/tags_and_releases.md
-   contents/documentation/index.rst
-   contents/github_actions.md
+   contents/about/introduction/index.rst
+   contents/about/installation/installation.md
+   contents/about/showcase/index.rst
 
 .. toctree::
+   :name: user_guide
+   :caption: User Guide
+   :maxdepth: 2
+
+   contents/user/intro/index.rst
+   contents/user/tools/index.rst
+
+.. toctree::
+   :name: developer_guide
+   :caption: Developer Guide
+   :maxdepth: 2
+
+   contents/developer/intro/index.rst
+   contents/developer/exceptions.ipynb
+   contents/developer/documentation/index.rst
+
+.. toctree::
+   :name: api_doc
    :caption: API Documentation
    :maxdepth: 2
 
-   api
+   api_user.rst
+   api_developer.rst
+
 
 Glossary, indices and tables
 ============================

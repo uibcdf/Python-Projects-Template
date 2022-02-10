@@ -61,7 +61,7 @@ jobs:
       shell: bash -l {0}
 
       run: |
-        pytest -v --cov=test_uibcdf_library --cov-report=xml --color=yes test_uibcdf_library/tests/
+        pytest -v --cov=project_name --cov-report=xml --color=yes project_name/tests/
 
     - name: CodeCov
       uses: codecov/codecov-action@v1
@@ -69,3 +69,4 @@ jobs:
         file: ./coverage.xml
         flags: unittests
         name: codecov-${{ matrix.os }}-py${{ matrix.python-version }}
+

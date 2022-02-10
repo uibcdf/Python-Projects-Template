@@ -1,5 +1,5 @@
 """
-Test_UIBCDF_Library
+Project name
 This must be a short description of the project
 """
 
@@ -13,6 +13,6 @@ del get_versions, versions
 # Add imports here
 from .main import print_hello
 from .main import get_versions
-from .main import get_requirements
+from .main import get_data
 from .main import list_files_in_data
 

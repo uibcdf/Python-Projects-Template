@@ -4,7 +4,7 @@
 # You can set these variables from the command line.
 SPHINXOPTS    =
 SPHINXBUILD   = sphinx-build
-SPHINXPROJ    = test_uibcdf_library
+SPHINXPROJ    = project_name
 SOURCEDIR     = .
 BUILDDIR      = _build
 
@@ -19,3 +19,6 @@ help:
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+clean :
+	rm -r _build
+	rm autosummary/*

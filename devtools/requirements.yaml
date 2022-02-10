@@ -1,61 +1,55 @@
-production:
-  channels:
-    - conda-forge
+setup:
+  channels: &setup_channels
     - defaults
-  dependencies:
+  dependencies: &setup_dependencies
     - python
-    - pyyaml
+    - setuptools
+    - numpy
 
-development:
-  channels:
+production:
+  channels: &production_channels
+    - uibcdf/label/dev
+    - uibcdf
     - conda-forge
-    - defaults
-  dependencies:
-    - python
-    - pyyaml
-    - jupyterlab
+    - *setup_channels
+  dependencies: &production_dependencies
+    - pyunitwizard
 
 test:
-  channels:
-    - conda-forge
-    - defaults
-  dependencies:
-    - python
-    - pyyaml
+  channels: &test_channels
+    - *production_channels
+  dependencies: &test_dependencies
+    - *production_dependencies
     - pytest
     - pip
     - pytest-cov
     - codecov
 
 docs:
-  channels:
-    - conda-forge
-    - defaults
-  dependencies:
-    - python
-    - pyyaml
+  channels: &docs_channels
+    - *production_channels
+  dependencies: &docs_dependencies
+    - *production_dependencies
     - sphinx
     - sphinx_rtd_theme
     - sphinxcontrib-bibtex
-    - nbsphinx
-    - recommonmark
-    - sphinx-markdown-tables
-    - jupyterlab
+    - myst-nb
 
-setup:
+development:
   channels:
-    - defaults
+    - *production_channels
   dependencies:
-    - python
-    - setuptools
-    - numpy
-    - versioneer
+    - *production_dependencies
+    - *test_dependencies
+    - *docs_dependencies
+    - jupyterlab
+    - pyyaml
 
 conda-build:
   channels:
-    - conda-forge
-    - defaults
+    - *production_channels
   dependencies:
+    - *setup_dependencies
     - anaconda-client
     - conda-build
 

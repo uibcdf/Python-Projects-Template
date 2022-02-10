@@ -1,13 +1,11 @@
 channels:
+- uibcdf/label/dev
+- uibcdf
 - conda-forge
-- default
+- defaults
 dependencies:
-- python
-- pyyaml
+- pyunitwizard
 - sphinx
 - sphinx_rtd_theme
 - sphinxcontrib-bibtex
-- nbsphinx
-- recommonmark
-- sphinx-markdown-tables
-- jupyterlab
+- myst-nb
