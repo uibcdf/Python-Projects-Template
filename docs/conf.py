@@ -24,10 +24,11 @@ import project_name
 
 # -- Project information -----------------------------------------------------
 
-project = 'Project Name'
-copyright = ('2021, UIBCDF Lab at the Mexico City Childrens Hospital Federico Gomez and authors.'
-        'Project structure based on the Computational Molecular Science Python Cookiecutter version 1.5')
-author = 'Liliana M. Moreno Vargas & Diego Prada Gracia'
+project = "Project Name"
+copyright = ("2022, Mexico City Childrens' Hospital Federico Gomez and authors. "
+        "This project is licensed by the authors and contributors under CC BY-NC-SA 4.0. "
+        "See the license details in the source code repository.")
+author = 'The contributors to the GitHub repository uibcdf/
 
 # The short X.Y version
 version = project_name.__version__.split('+')[0]
